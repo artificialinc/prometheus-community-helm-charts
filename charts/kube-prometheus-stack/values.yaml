@@ -70,6 +70,9 @@ defaultRules:
   ## Additional labels for PrometheusRule alerts
   additionalRuleLabels: {}
 
+  ## Additional annotations for PrometheusRule alerts
+  additionalRuleAnnotations: {}
+
   ## Prefix for runbook URLs. Use this to override the first part of the runbookURLs that is common to all rules.
   runbookUrl: "https://runbooks.prometheus-operator.dev/runbooks"
 
@@ -168,7 +171,7 @@ alertmanager:
     global:
       resolve_timeout: 5m
     route:
-      group_by: ['job']
+      group_by: ['namespace']
       group_wait: 30s
       group_interval: 5m
       repeat_interval: 12h
